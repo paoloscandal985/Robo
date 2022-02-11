@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+$LOAD_PATH.unshift File.dirname(__FILE__) + '/../lib'
+
+require 'rubocop_rules'
+require 'rubocop_rules/cli'
+
+STDOUT.sync = true
+RubocopRules::CLI::Commands.start(ARGV)

@@ -1,0 +1,31 @@
+###########################
+# Configuration for rubocop
+# in .rubocop.yml
+
+##############
+# Global rules
+# see .rubocop_common.yml
+
+##############
+# Inherit default rules first, and then override those rules with
+# our violation whitelist.
+inherit_from:
+  - .rubocop_common.yml
+
+AllCops:
+  Exclude:
+    - db/**/*
+
+Rails:
+  Enabled: false
+
+Style/SymbolArray:
+  EnforcedStyle: brackets
+
+Metrics/LineLength:
+  Max: 100
+
+Metrics/BlockLength:
+  Exclude:
+   - '*.gemspec'
+   - 'spec/**/*.rb'
